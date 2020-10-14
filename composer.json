@@ -1,28 +1,28 @@
 {
-    "name": "laravel-enso/files",
+    "name": "genealogiawebsite/files",
     "description": "File manager dependency for Laravel Enso",
     "keywords": [
-        "laravel-enso",
+        "genealogiawebsite",
         "files",
         "file-manager",
         "file-uploader"
     ],
-    "homepage": "https://github.com/laravel-enso/files",
+    "homepage": "https://github.com/genealogiawebsite/files",
     "type": "library",
     "license": "MIT",
     "authors": [{
         "name": "Adrian Ocneanu",
         "email": "aocneanu@gmail.com",
-        "homepage": "https://laravel-enso.com",
+        "homepage": "https://genealogiawebsite.com",
         "role": "Developer"
     }],
     "require": {
         "php": ">=7.4.0",
-        "laravel-enso/core": "^5.0|^.6.0",
-        "laravel-enso/helpers": "^2.0",
-        "laravel-enso/image-transformer": "^2.0",
-        "laravel-enso/migrator": "^2.0",
-        "laravel-enso/track-who": "^2.0"
+        "genealogiawebsite/core": "^5.0|^.6.0",
+        "genealogiawebsite/helpers": "^2.0",
+        "genealogiawebsite/image-transformer": "^2.0",
+        "genealogiawebsite/migrator": "^2.0",
+        "genealogiawebsite/track-who": "^2.0"
     },
     "autoload": {
         "psr-4": {
