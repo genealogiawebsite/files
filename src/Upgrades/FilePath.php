@@ -5,7 +5,6 @@ namespace LaravelEnso\Files\Upgrades;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
-use LaravelEnso\Files\Facades\FileBrowser;
 use LaravelEnso\Files\Models\File;
 use LaravelEnso\Upgrade\Contracts\MigratesData;
 use LaravelEnso\Upgrade\Contracts\MigratesPostDataMigration;
@@ -33,7 +32,9 @@ class FilePath implements MigratesTable, MigratesData, MigratesPostDataMigration
             ->pluck('attachable_type');
 
         $types->each(function (string $type) {
-            $folder = FileBrowser::folder($type);
+            $folder = File::whereAttachableType($type)
+                ->has('attachable')
+                ->first()->attachable->folder();
 
             File::whereAttachableType($type)->update([
                 'path' => DB::raw("CONCAT('{$folder}/', saved_name)"),
